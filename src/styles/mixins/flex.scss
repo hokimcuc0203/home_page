@@ -1,0 +1,16 @@
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin position-center() {
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin text-overflow($line-clamp: 1) {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $line-clamp;
+    overflow: hidden; 
+}

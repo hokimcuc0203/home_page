@@ -1,0 +1,44 @@
+@import "./home.scss";
+@import "./job.scss";
+@import "./special.scss";
+@import "./mission.scss";
+@import "./news.scss";
+@import "./footer.scss";
+@import "./about.scss";
+
+.page {
+    &__container {
+        @include flex-column;
+        flex: 1 1 auto;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__bg {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        filter: brightness(60%);
+    }
+
+    &--mb {
+        margin-bottom: 25px;
+    }
+
+    &--mg {
+        margin: $margin;
+    }
+
+    &--mg-right {
+        margin-right: $margin;
+    }
+
+    &--padding {
+        padding: $padding;
+    }
+
+    &--pd-left {
+        padding-left: $margin;
+    }
+}

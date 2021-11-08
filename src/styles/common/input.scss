@@ -1,0 +1,25 @@
+.page__input {
+    &__container {
+        color: $gray;
+        margin: $margin;
+        i {
+            position: absolute;
+            padding: 12px;
+            pointer-events: none;
+        }
+
+        input {
+            padding-left: 30px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border: unset;
+            border:solid 1px $white;
+            border-radius: 50px;
+            width: 250px;
+            &:focus {
+                outline: none !important;
+                border:solid 1px $gray;
+            }
+        }
+    }
+}

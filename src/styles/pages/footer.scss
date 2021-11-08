@@ -1,0 +1,51 @@
+.page__footer{
+    &__header {
+        width: 100%;
+        align-items: center;
+        justify-content: space-around;
+    }
+    &__row {
+        width: 60%;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid $gray;
+        padding: 20px;
+    }
+
+    &__sponser {
+        .page__container {
+            flex: 1 1 20%;
+            height: 80px;
+            color: $gray;
+            margin-bottom: 10px;
+        }
+    }
+
+    &__link {
+        align-items: flex-start;
+        a {
+            text-decoration: none;
+            font-size: 10;
+            line-height: 2;
+            color: $gray;
+        }
+    }
+    &__contact {
+        i {
+            color: $blue;
+            margin: 5px;
+            &.color-red {
+                color: red;;
+            }
+        }
+    }
+    &__copyright {
+        i {
+            color: $gray;
+            font-size: 10;
+            &.color-blue {
+                color: $blue;;
+            }
+        }
+    }
+}

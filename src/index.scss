@@ -1,0 +1,15 @@
+@import "styles/index.scss";
+
+body {
+    margin: auto;
+    font-family: "Poppins", Arial, sans-serif;
+    font-size: 12px;
+    font-weight: $font-weight-normal;
+    background-color: $alice;
+    color: contrast-color($alice);
+}
+
+h1 {
+    font-size: 30;
+    font-weight: $font-weight-normal;
+}

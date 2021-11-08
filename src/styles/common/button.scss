@@ -1,0 +1,58 @@
+.btn {
+    // #5b5c5d
+    // #cacacb
+    border: 1px solid $lightgray;
+    border-radius: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    @include button-bg($white);
+
+    .fa-lg {
+        font-size: 1.33333333em !important;
+    }
+
+    &__content {
+        display: flex;
+        align-items: center;
+    }
+
+    &__icon {
+        width: 24px;
+        height: 24px;
+        background-position: center;
+    }
+
+    &__text {
+        margin-right: 7px;
+    }
+
+    &--circle {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        justify-content: center;
+        padding: unset
+    }
+
+    &--blue {
+        @include button-bg($blue);
+        border: none;
+    }
+
+    &--black {
+        @include button-bg($black);
+    }
+
+    &--transparent {
+        @include button-bg($tran);
+    }
+
+    &--lg {
+        padding-left: 35px;
+        padding-right: 35px;
+    }
+}

@@ -1,0 +1,121 @@
+
+$circle-width: 0.09em;
+$circle-width-hover: 0.07em;
+
+$primary-color-span: #3c4761;
+
+// CIRCLE
+// classes 2 extend
+.rect-auto{
+	clip: rect(auto, auto, auto, auto);
+}
+
+.pie {
+	position: absolute;
+	border: $circle-width solid $black;
+	width: 1 - (2 * $circle-width);
+	height: 1 - (2 * $circle-width);
+	clip: rect(0em, 0.5em, 1em, 0em);
+	border-radius: 50%;
+	transform: rotate(0deg);
+}
+
+.pie-fill {
+	transform: rotate(180deg);
+}
+
+.circle {
+    &__wrap {
+	    margin: 2em;
+        // main
+        .c100 {
+            position: relative;
+            font-size: 112px;
+            width: 1em;
+            height: 1em;
+            border-radius: 50%;
+            float: left;
+            background-color: $tran;
+            // centered value inside circle
+            > span {
+                position: absolute;
+                width: 100%;
+                z-index: 1;
+                width: 5em;
+                line-height: 5em;
+                font-size: 0.2em;
+                text-align: center;
+                transition: all 0.2s ease-in;
+            }
+            // background inside the circle
+            &:after{
+                position: absolute;
+                top: $circle-width;
+                left: $circle-width;
+                display: block;
+                content: " ";
+                border-radius: 50%;
+                background-color: $tran;
+                width: 1 - (2 * $circle-width);
+                height: 1 - (2 * $circle-width);
+                transition: all 0.2s ease-in;
+            }
+            // // the slice (mask)
+            .slice {
+                position: absolute;
+                width: 1em;
+                height: 1em;
+                clip: rect(0em, 1em, 1em, 0.5em);
+            }
+            // circle to show the status
+            .bar {
+                @extend .pie;
+            }
+            // // loop to create all needed elements automatically
+            @for $j from 51 through 100 {
+
+                &.p#{$j} .slice {
+                    @extend .rect-auto;
+                }
+
+                &.p#{$j} .bar:after{
+                    @extend .pie-fill;
+                }
+
+                &.p#{$j} .fill{
+                    @extend .pie;
+                    @extend .pie-fill;
+                }
+            }
+            // // loop to rotate all 100 circles
+            @for $j from 1 through 100 {
+                &.p#{$j} .bar {
+                    transform: rotate((360/100*$j) + deg);
+                }
+            }
+
+            // hover styles
+            &:hover{
+                cursor: default;
+                span {
+                    width: 3.33em;
+                    line-height: 3.33em;
+                    font-size: 0.3em;
+                }
+            }
+            // blue
+            &.blue{
+                .bar, .fill { border-color: $blue !important;}
+            }
+
+        }
+
+        @include media-breakpoint-down($sm) {
+            margin: 1em;
+        }
+    }
+    &__des {
+        text-align: center;
+        line-height: 4em;
+    }
+}

@@ -1,0 +1,32 @@
+const webpack = require('webpack');
+const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
+const config = {
+  entry: './src/index.js',
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js'
+  },
+  devServer: {
+    static: './dist',
+    hot: true,
+  },
+  module: {
+    rules: [
+      {
+        test: /\.scss$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'sass-loader'
+        ]
+      }
+    ]
+  },
+  plugins: [
+    new MiniCssExtractPlugin()
+  ]
+};
+
+module.exports = config;

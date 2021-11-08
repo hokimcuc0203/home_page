@@ -1,0 +1,22 @@
+.page__job {
+    min-height: 60%;
+    padding: $padding;
+
+    .fa {
+        color: $gray;
+    }
+
+    &__header {
+        width: 100%;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    &__content {
+        .page__card__content {
+            p {
+                @include text-overflow(4)
+            }
+        }
+    }
+}

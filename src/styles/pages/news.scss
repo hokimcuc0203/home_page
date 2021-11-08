@@ -1,0 +1,25 @@
+.page__news {
+    padding: 10px;
+
+    &__header {
+        width: 100%;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    &__content {
+        .page__card {
+            padding: 0;
+            &__content {
+                padding: 10px;
+                p {
+                    @include text-overflow(6)
+                }
+            }
+            &__footer {
+                padding: 10px;
+                justify-content: flex-end;
+            }
+        }
+    }
+}

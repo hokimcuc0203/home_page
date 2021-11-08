@@ -1,0 +1,9 @@
+@mixin media-breakpoint-down($name) {
+    @media screen and (max-width: $name) {  
+        @content;
+    }
+
+    @media screen and (max-device-width: 480px) { 
+        @content;
+    }
+}

@@ -1,0 +1,24 @@
+$blue: #2687DC !default;
+$tran: transparent !default;
+$black: #212223 !default;
+$white: white !default;
+$gray: #c3c4c5 !default;
+$lightgray: #cacacb !default;
+$alice: #f0f4f5 !default;
+
+$threshold: 55% !default;
+
+$padding: 10px !default;
+$margin: 10px !default;
+
+$sm: 576px !default;
+
+$font-weight-lighter:         lighter !default;
+$font-weight-light:           300 !default;
+$font-weight-normal:          400 !default;
+$font-weight-bold:            700 !default;
+$font-weight-bolder:          bolder !default;
+
+// Utilities
+
+$positions: static, relative, absolute, fixed, sticky !default;

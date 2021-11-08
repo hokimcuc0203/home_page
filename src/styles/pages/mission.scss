@@ -1,0 +1,87 @@
+.page__mission {
+    min-height: 70%;
+    flex-direction: row;
+    justify-content: flex-start;
+    $this: &;
+
+    &.content--right {
+        justify-content: flex-end;
+        .page__bg {
+            align-self: flex-end !important;
+        }
+        #{$this}__content {
+            align-items: flex-start;
+        }
+    }
+
+    &__content {
+        width: 80%;
+        height: 500px;
+        justify-content: center;
+        align-items: flex-end;
+
+        .page__bg {
+            width: 87%;
+            align-self: flex-start;
+        }
+
+        .page__container {
+            max-width: 450px;
+        }
+
+        .page__card {
+            border-radius: 0 35px;
+            padding: 15px;
+
+            &__header {
+                color: $blue;
+                position: relative;
+                &:before {
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    height: 1px;
+                    bottom: -1;
+                    background: linear-gradient(to right, $blue 10%, white 5%);
+                }
+            }
+
+            &__footer {
+                justify-content: flex-end;
+                margin-bottom: 25px;
+            }
+
+            &__misson__icon {
+                position: absolute;
+                right: 45px;
+                top: 45px;
+            }
+        }
+    }
+
+}
+
+
+@media screen and (max-width: 576px) {  
+    .page__mission {
+        justify-content: center;
+        align-items: center;
+        &__content {
+            width: 100%;
+        }
+        .page__bg {
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (max-device-width: 480px) {
+    .page__mission {
+        &__header {
+            width: 100%;
+        }
+        &__content {
+            width: 100%;
+        }
+    }
+}

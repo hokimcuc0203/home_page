@@ -1,0 +1,14 @@
+
+@function contrast-color($color, $dark: $black, $light: $white) {
+    @return if(lightness($color) < $threshold, $light, $dark)
+}
+
+@mixin button-bg($background-color, $dark: $black, $light: $white) {
+  background-color: $background-color;
+  color: contrast-color($background-color, $dark, $light);
+
+  &:hover {
+    background-color: darken($background-color, 15%);  
+    color: contrast-color(darken($background-color, 15%), $dark, $light);  
+  }
+}

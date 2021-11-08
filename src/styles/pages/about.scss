@@ -1,0 +1,13 @@
+.page {
+    &__about {
+        height: 80%;
+		color: contrast-color($black);
+        &__content {
+            max-width: 576px;
+            margin-left: 15px;
+            margin-right: 15px;
+            @include text-overflow(15);
+        }
+    }
+
+}
